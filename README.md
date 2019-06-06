@@ -10,11 +10,11 @@ npm install @fabriciofmsilva/share-element
 
 ## Usage
 
-```
+```js
 import '@fabriciofmsilva/share-element';
 ```
 
-```
+```html
 <fm-share></fm-share>
 ```
 
