@@ -1,0 +1,31 @@
+{
+  "env": {
+    "esm": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "esmodules": false
+            }
+          }
+        ]
+      ]
+    },
+    "umd": {
+      "plugins": [
+        "@babel/plugin-transform-modules-umd"
+      ],
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "esmodules": false
+            }
+          }
+        ]
+      ]
+    }
+  }
+}

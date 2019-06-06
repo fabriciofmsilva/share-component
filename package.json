@@ -1,0 +1,63 @@
+{
+  "name": "@fabriciofmsilva/share-element",
+  "version": "0.0.1",
+  "description": "A share element that uses Web Share API or shown a fallback to browser that doesn't supports.",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "lint": "standard",
+    "lint:fix": "standard src/*.js --fix",
+    "prebuild": "npm run clean && npm run lint && mkdir dist",
+    "build": "npm run build:umd && npm run build:esm",
+    "build:umd": "BABEL_ENV=umd babel src/index.js -o dist/index.umd.js",
+    "build:esm": "BABEL_ENV=esm babel src/index.js -o dist/index.js",
+    "pretest": "npm run build",
+    "test": "karma start test/karma.config.js",
+    "test:watch": "karma start test/karma.config.js --auto-watch --no-single-run",
+    "prepublishOnly": "npm run build"
+  },
+  "standard": {
+    "globals": [
+      "HTMLElement",
+      "describe",
+      "it",
+      "assert",
+      "beforeEach",
+      "afterEach"
+    ],
+    "ignore": [
+      "dist/"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabriciofmsilva/share-element.git"
+  },
+  "author": "Fabricio Silva",
+  "bugs": {
+    "url": "https://github.com/fabriciofmsilva/share-element/issues"
+  },
+  "homepage": "https://github.com/fabriciofmsilva/share-element#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-modules-umd": "^7.2.0",
+    "@babel/preset-env": "^7.4.5",
+    "chai": "^4.2.0",
+    "karma": "^4.1.0",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.5",
+    "mocha": "^6.1.4",
+    "standard": "^12.0.1"
+  }
+}
